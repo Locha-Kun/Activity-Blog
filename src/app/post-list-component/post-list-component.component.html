@@ -1,0 +1,22 @@
+<div [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts >= 1,
+                'list-group-item-danger': loveIts <= -1}">
+    
+    <div class="container" [ngStyle]="{color: getColor()}">
+      <div class="row">
+        <div class="col-lg-9" id='gros'><strong>{{ postTitle | uppercase }}</strong></div>
+        <div class="col-lg-3"><i>{{ postCreated_at }}</i></div>
+      </div><br>   
+      <div class="row">
+          <div class="col-lg-12" id="cadre">{{ postContent }}</div>
+      </div><br>   
+      <div class="row">
+          <div class="col-lg-12">
+              <button class="btn btn-success"
+              (click)="increment()">LOVE IT</button> 
+              <button class="btn btn-danger btn-sm"
+              (click)="decrement()">bullshit</button>
+          </div>
+      </div>  
+    </div>
+</div>
